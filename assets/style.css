@@ -1,0 +1,48 @@
+
+body{margin:0;font-family:sans-serif;background:#141414;color:white;display:flex;}
+.sidebar{
+  width:240px;background:#1d1d1d;height:100vh;padding:20px;box-shadow:2px 0 10px rgba(0,0,0,0.4);
+  position:fixed;left:0;top:0;
+}
+.logo{color:#ff3b3b;}
+.sidebar button{
+  width:100%;padding:12px;margin-top:10px;background:#ff3b3b;border:none;color:white;
+  border-radius:8px;font-weight:bold;cursor:pointer;
+}
+.content{
+  margin-left:260px;padding:20px;width:calc(100% - 260px);
+}
+.panel{
+  background:#1f1f1f;padding:20px;border-radius:12px;margin-top:20px;
+  box-shadow:0 0 10px rgba(255,0,0,0.3);
+}
+
+input{
+  width:100%;padding:12px;margin-top:10px;background:#2a2a2a;border:1px solid #444;color:white;border-radius:6px;
+}
+button{
+  padding:12px 20px;margin-top:10px;background:#ff3b3b;border:none;color:white;border-radius:8px;
+  cursor:pointer;font-weight:bold;
+}
+
+/* Modal */
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;
+}
+.modal.show{display:flex;}
+.modal-box{
+  width:400px;background:#1e1e1e;padding:20px;border-radius:12px;
+  box-shadow:0 0 20px rgba(255,0,0,0.4);
+}
+
+/* Loader Spinner */
+.loader-overlay{
+  position:fixed;inset:0;background:#000d;display:flex;align-items:center;justify-content:center;z-index:5000;
+}
+.spinner{
+  width:80px;height:80px;border:6px solid rgba(255,255,255,0.3);
+  border-top-color:#ff3b3b;border-radius:50%;animation:spin 1s linear infinite;
+}
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
