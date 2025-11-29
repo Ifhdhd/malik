@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Firebase Admin Desktop Panel</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</head>
+<body>
+
+<div id="loader" class="loader-overlay">
+<div class="spinner"></div>
+</div>
+
+<div class="sidebar">
+  <h2 class="logo">FB Admin</h2>
+  <button onclick="loadData()">Refresh</button>
+  <button onclick="openMultiEdit()">Edit Massal</button>
+</div>
+
+<div class="content">
+  <h1>Dashboard Admin</h1>
+
+<div class="panel">
+  <h2>Konfigurasi Database</h2>
+  <input id="dbUrl" placeholder="Database URL">
+  <input id="dbSecret" placeholder="Database Secret">
+  <button onclick="saveConfig()">Simpan</button>
+  <button onclick="resetConfig()">Reset</button>
+</div>
+
+<div class="panel">
+  <h2>Daftar User</h2>
+  <div id="userList">Belum ada data…</div>
+</div>
+
+</div>
+
+<!-- Modal Edit Massal -->
+<div id="multiModal" class="modal">
+ <div class="modal-box">
+   <h2>Edit Massal</h2>
+   <input id="multi_username" placeholder="Username (opsional)">
+   <input id="multi_password" placeholder="Password (opsional)">
+   <input id="multi_expiry" placeholder="Expiry yyyy-mm-dd (opsional)">
+   <button onclick="applyMultiEdit()">Simpan Perubahan</button>
+   <button onclick="closeMulti()">Batal</button>
+ </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
